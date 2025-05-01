@@ -1,0 +1,80 @@
+/* Стили для header-bar */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Фиксированный отступ */
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Равномерные отступы между элементами */
+}
+
+/* Кнопка структуры БД */
+.db-structure-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px;
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.db-structure-btn:hover {
+    opacity: 1;
+    color: #495057;
+}
+
+/* Гарантируем, что database-info не влияет на поток */
+.database-info {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Фиксируем позицию search-add-wrapper */
+#search-add-wrapper {
+    margin-top: 0;
+    margin-bottom: 20px;
+    /* Фикс для всего блока задач */
+.task-items-wrapper {
+    margin-top: 20px; /* Фиксированный отступ */
+}
+
+/* Гарантируем, что кнопка не влияет на поток */
+.db-structure-btn {
+    position: relative;
+    top: -2px; /* Микро-корректировка выравнивания */
+    flex-shrink: 0; /* Запрещаем сжатие */
+}
+    .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin: 10px 0;
+}
+    .alert-danger {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 20px;
+    border-left: 4px solid #c62828;
+}
+    .error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid #c62828;
+}
+}

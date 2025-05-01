@@ -1,0 +1,14 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>Database Table Info</h1>
+</div>
+<div class="card-body">
+    <h2>Table Structure: base_task</h2>
+    <ul>
+        {% for column in columns %}
+        <li><b>{{ column.0 }}</b>: {{ column.1 }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>Мои проекты</h1>
+    </div>
+    <a href="{% url 'project-create' %}">&#43; Новый проект</a>
+</div>
+
+<div id="project-list">
+    {% for project in projects %}
+    <div class="project-wrapper">
+        <div class="project-title">
+            <a href="{% url 'project-detail' project.id %}">{{ project.name }}</a>
+            <span class="project-meta">
+                Срок: {{ project.deadline|date:"d.m.Y"|default:"не указан" }} | 
+                Задач: {{ project.task_set.count }}
+            </span>
+        </div>
+    </div>
+    {% empty %}
+    <div class="empty-list">
+        <h3>У вас нет проектов</h3>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

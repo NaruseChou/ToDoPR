@@ -1,0 +1,33 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<!-- Этот блок будет показывать ошибки -->
+{% if form.errors %}
+<div style="
+    background: #ffdddd;
+    color: #d32f2f;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #d32f2f;
+">
+    {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

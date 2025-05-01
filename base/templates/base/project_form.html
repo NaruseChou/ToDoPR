@@ -1,0 +1,16 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'projects' %}">&#8592; Назад</a>
+</div>
+
+<div class="card-body">
+    <h3>Создать новый проект</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" value="Создать">
+    </form>
+</div>
+{% endblock %}
